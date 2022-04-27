@@ -1,12 +1,11 @@
 import time
 import pandas as pd
-import numpy as np
 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
-def get_filters():
+def get_data_filters():
     """
     Requests user to specify a city, month, and day for analysis.
 
@@ -176,7 +175,7 @@ def user_stats(df):
 
 def main():
     while True:
-        city, month, day = get_filters()
+        city, month, day = get_data_filters()
         df = load_data(city, month, day)
 
         time_stats(df)
